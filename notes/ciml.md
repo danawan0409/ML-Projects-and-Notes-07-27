@@ -107,4 +107,40 @@ Solutions
 Dimension reduction
 
 # Ch4: The perceptron
-Perceptron algorithm: can learn weights for features
+Perceptron algorithm: can learn weights for features. Based on how neurons work. The sign of the sum of weights (w) & input vectors (x), which is called the activation, determine if the neuron 'fires'. 
+![alt text](image-6.png)
+To have a non-zero threshold, introduce a bias term b. 
+![alt text](image-7.png)
+Steps of the algorithm: 
+![alt text](image-8.png)
+notes: 
+1. since y is -1 if the neuron doesn't fire and +1 if it does, ya will be > 0 if they have the same sign and < 0 if they don't. Thus the algorithm only updates the weight if the algorithm predicts wrong. 
+2. algorithm looks at one example at a time
+
+Hyperparameter: 
+MaxIter: how many times it passes through the data. Too many -> overfitting, too little -> underfitting
+
+Permuting: permute the order of examples at the beginning of each iteration to yield ~20% savings in # of iterations (in practice). 
+
+Geometric interpretation: 
+If we think of the weights as a vector w, then the decision boundary is simply the plane perpendicular to w. Note that the scale of the weight vector is irrelevant as only the sign matters, so its common to work with normalized weight vectors. 
+
+Scaling features: if you want to find how sensitive the final classification is to a feature, you can sort all the weights from largest to smallest and select the ones at the top and bottom. However if w1 == w2 yet x1 can take the values 0, 1, and x2 can take on values between 0 and 100, then in practice, x2 (100*w2) can over-dominate x1 (1*w1). To fix this, scale the features appropriately before using perceptron algorithm. 
+
+Does this algorithm converge?
+It converges only if the data is linearly separable, i.e. if there exists a hyperplane that separates all the + examples and - examples. 
+Margin: the distance between the hyperplane that separates the data and nearest point. 
+![alt text](image-9.png)
+Margin of a data set: ![alt text](image-10.png)
+
+Perceptron convergence theorem: 
+![alt text](image-11.png)
+Do understand the proof but don't need to know it 
+
+Voted perceptron: hyperplanes get votes based on how long they survived, and the prediction on a test point would be ![alt text](image-12.png), where c is the survival times for each weight vector. Impractical as you need to store weight vectors with their counts for every update, and super slow
+Average perceptron: similar to voted perceptron except you maintain a running rum of hte averaged weight vector and average bias. ![alt text](image-13.png)
+
+Limitations: decision boundaries has to be linear. Can't do stuff like the XOR problem. 
+
+# Ch5: Practical issues
+
