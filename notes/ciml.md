@@ -204,5 +204,8 @@ Imbalanced data: ex. 1% fraud and 99% not fraud
 - Weighting: give not fraud examples less weight, so that the weight of both will add up to 50-50
 
 ![alt text](image-22.png)
-Where alpha is how many times the positive class is alpha times as important as the negative calss. 
+Where alpha is how many times the positive class is alpha times as important as the negative class.
+
+Most reference images and notes are not in the textbook yet, which makes parts difficult to understand, so we'll end here. This much is enough for CS224 natural language processing with deep learning
+
 
