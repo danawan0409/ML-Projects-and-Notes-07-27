@@ -12,8 +12,8 @@ Unsupervised Learning (no right answer, find something interesting in unlabeled 
     Clustering
 
 Squared Error Cost Function
-![alt text](image.png)
+![alt text](images/image.png)
 Gradient Descent Algorithm
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 As derivative becomes smaller, update steps become smaller
 Batch gradient descent: each step of gradient descent uses all the training examples
